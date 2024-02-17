@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'bpw-contact',
   standalone: true,
-  imports: [CommonModule],
-  template: `<p>contact works!</p>`,
+  imports: [],
+  template: ``,
   styles: `
     :host {
-      display: block;
+      @apply block;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

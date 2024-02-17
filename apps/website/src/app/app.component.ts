@@ -11,28 +11,40 @@ import { TeamComponent } from './team/team.component';
   standalone: true,
   selector: 'bpw-root',
   template: `
-    <header>
-      <bpw-header />
+    <header class="container sticky">
+      <bpw-header [links]="navItems" />
     </header>
-    <section>
-      <bpw-hero />
-    </section>
-    <section>
-      <bpw-services />
-    </section>
-    <section>
-      <bpw-team />
-    </section>
-    <section>
-      <bpw-contact />
-    </section>
-    <footer>
+    <main>
+      <section class="container">
+        <h2 class="text-2xl">bimTree</h2>
+        <bpw-hero />
+      </section>
+      <section
+        class="container"
+        id="services">
+        <h2 class="text-2xl">Services</h2>
+        <bpw-services />
+      </section>
+      <section
+        class="container"
+        id="team">
+        <h2 class="text-2xl">Team</h2>
+        <bpw-team />
+      </section>
+      <section
+        class="container"
+        id="contact">
+        <h2 class="text-2xl">Kontakt</h2>
+        <bpw-contact />
+      </section>
+    </main>
+    <footer class="container">
       <bpw-footer />
     </footer>
   `,
   styles: `
     :host {
-      display: block;
+      @apply block;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -46,4 +58,10 @@ import { TeamComponent } from './team/team.component';
     FooterComponent,
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  protected readonly navItems = [
+    { href: '#services', text: 'Services' },
+    { href: '#team', text: 'Team' },
+    { href: '#contact', text: 'Kontakt' },
+  ];
+}

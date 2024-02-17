@@ -1,14 +1,32 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ProfileComponent } from '@bp/components';
 
 @Component({
   selector: 'bpw-team',
   standalone: true,
-  imports: [CommonModule],
-  template: `<p>team works!</p>`,
+  imports: [ProfileComponent],
+  template: `
+    <bpc-profile
+      imgSrc="/assets/team/mathias.jpg"
+      name="Mathias Schmid"
+      title="Geschäftsleitung, Co-Founder"
+      email="mathias.schmid@bimparts.ch" />
+
+    <bpc-profile
+      imgSrc="/assets/team/andreas.jpg"
+      name="Andreas Lukas"
+      title="Landschaftsarchitekt, Co-Founder"
+      email="andreas.lukas@bimparts.ch" />
+
+    <bpc-profile
+      imgSrc="/assets/team/mathieu.jpg"
+      name="Mathieu Lichtsteiner"
+      title="Softwareingenieur, Co-Founder"
+      email="mathieu.lichtsteiner@bimparts.ch" />
+  `,
   styles: `
     :host {
-      display: block;
+      @apply grid lg:grid-cols-3 gap-4;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -17,6 +17,7 @@
     "mrmlnc.vscode-doiuse",
     "bradlc.vscode-tailwindcss",
     "csstools.postcss",
-    "redhat.fabric8-analytics"
+    "redhat.fabric8-analytics",
+    "firsttris.vscode-jest-runner"
   ]
 }

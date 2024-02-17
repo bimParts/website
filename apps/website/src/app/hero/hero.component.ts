@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
   selector: 'bpw-hero',
   standalone: true,
   imports: [CommonModule],
-  template: `<p>hero works!</p>`,
+  template: ``,
   styles: `
     :host {
-      display: block;
+      @apply block;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
