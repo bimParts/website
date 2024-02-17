@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'bpw-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: ``,
   styles: `
     :host {
