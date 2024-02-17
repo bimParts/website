@@ -10,7 +10,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       [title]="'Email-Adresse von ' + name()">
       <figure class="flex flex-col items-center max-w-24">
         <img
-          class="aspect-square rounded w-full object-cover"
+          class="aspect-square rounded-full w-full object-cover"
           [src]="imgSrc()"
           [alt]="name()" />
         <figcaption>

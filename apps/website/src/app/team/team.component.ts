@@ -7,13 +7,13 @@ import { ProfileComponent } from '@bp/components';
   imports: [ProfileComponent],
   template: `
     <bpc-profile
-      imgSrc="/assets/team/mathias.jpg"
+      imgSrc="/assets/team/mathias.png"
       name="Mathias Schmid"
       title="Geschäftsleitung, Co-Founder"
       email="mathias.schmid@bimparts.ch" />
 
     <bpc-profile
-      imgSrc="/assets/team/andreas.jpg"
+      imgSrc="/assets/team/andreas.png"
       name="Andreas Lukas"
       title="Landschaftsarchitekt, Co-Founder"
       email="andreas.lukas@bimparts.ch" />
