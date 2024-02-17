@@ -24,6 +24,11 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "plugins": [
@@ -40,7 +45,24 @@
       }
     }
   ],
-  "generators": {},
+  "generators": {
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "projectNameAndRootFormat": "derived",
+      "buildable": false,
+      "routing": false,
+      "strict": true,
+      "standalone": true
+    },
+    "@nx/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "displayBlock": true,
+      "inlineStyle": true,
+      "inlineTemplate": true
+    }
+  },
   "cli": {
     "packageManager": "npm"
   },
