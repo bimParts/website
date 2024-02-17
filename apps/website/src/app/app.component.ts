@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   imports: [RouterModule],
   selector: 'bpw-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  template: ` <router-outlet></router-outlet> `,
+  styles: `
+    :host {
+      display: block;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title = 'website';
-}
+export class AppComponent {}
