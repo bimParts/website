@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -49,7 +48,6 @@ import { TeamComponent } from './team/team.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterModule,
     HeaderComponent,
     HeroComponent,
     ServicesComponent,
