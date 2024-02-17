@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "bimParts",
+            "prefix": "bpc",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "bim-parts",
+            "prefix": "bpc",
             "style": "kebab-case"
           }
         ]
