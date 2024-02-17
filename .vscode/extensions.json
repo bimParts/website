@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "angular.ng-template",
+    "github.copilot",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "albert.tabout",
+    "meganrogge.template-string-converter",
+    "gruntfuggly.todo-tree",
+    "mrmlnc.vscode-doiuse",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "redhat.fabric8-analytics"
+  ]
+}

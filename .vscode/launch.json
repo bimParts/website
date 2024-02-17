@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Website",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}",
+      "disableNetworkCache": true,
+      "runtimeArgs": ["--incognito"],
+      "skipFiles": ["<node_internals>/**"],
+      "preLaunchTask": "serve:website",
+      "postDebugTask": "stop:console"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "View Website",
+      "url": "http://localhost:8080/website/browser/",
+      "webRoot": "${workspaceFolder}/dist/apps/website/browser/",
+      "disableNetworkCache": false,
+      "runtimeArgs": ["--incognito"],
+      "preLaunchTask": "view:website",
+      "postDebugTask": "stop:console"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "serve:website",
+      "type": "shell",
+      "command": "npx -y nx run website:serve:development",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "problemMatcher": {
+        "owner": "nx",
+        "pattern": {
+          "regexp": "(.*?)"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "(.*?)bundle generation complete(.*?)"
+          }
+        }
+      }
+    },
+    {
+      "label": "build:website",
+      "type": "shell",
+      "command": "npx -y nx run website:build:production",
+      "isBackground": false,
+      "options": {
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "NODE_ENV": "production"
+        }
+      },
+      "problemMatcher": {
+        "owner": "nx",
+        "pattern": {
+          "regexp": "(.*?)"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "(.*?)bundle generation complete(.*?)"
+          }
+        }
+      }
+    },
+    {
+      "label": "serve:build",
+      "type": "shell",
+      "command": "npm run serve:build",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "serve",
+        "pattern": {
+          "regexp": "(.*?)"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "(.*?)Serving!(.*?)"
+          }
+        }
+      }
+    },
+    {
+      "label": "view:website",
+      "type": "shell",
+      "dependsOrder": "sequence",
+      "dependsOn": ["build:website", "serve:build"]
+    },
+    {
+      "label": "stop:console",
+      "command": "echo ${input:terminate}",
+      "type": "shell"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    }
+  ]
+}
