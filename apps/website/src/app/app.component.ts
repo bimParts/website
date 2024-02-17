@@ -1,22 +1,34 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
 
 @Component({
   standalone: true,
   selector: 'bpw-root',
   template: `
-    <bpw-header />
-    <bpw-hero />
-    <bpw-services />
-    <bpw-team />
-    <bpw-contact />
-    <bpw-footer />
+    <header>
+      <bpw-header />
+    </header>
+    <section>
+      <bpw-hero />
+    </section>
+    <section>
+      <bpw-services />
+    </section>
+    <section>
+      <bpw-team />
+    </section>
+    <section>
+      <bpw-contact />
+    </section>
+    <footer>
+      <bpw-footer />
+    </footer>
   `,
   styles: `
     :host {
