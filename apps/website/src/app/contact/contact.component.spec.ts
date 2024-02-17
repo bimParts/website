@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { ContactComponent } from './contact.component';
 
 describe(ContactComponent.name, () => {
@@ -7,6 +7,7 @@ describe(ContactComponent.name, () => {
   beforeEach(async () => {
     const { fixture } = await render(ContactComponent, {
       imports: [],
+      providers: [],
     });
     component = fixture.componentInstance;
   });

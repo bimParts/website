@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { HeaderComponent } from './header.component';
 
 describe(HeaderComponent.name, () => {
@@ -7,6 +7,10 @@ describe(HeaderComponent.name, () => {
   beforeEach(async () => {
     const { fixture } = await render(HeaderComponent, {
       imports: [],
+      providers: [],
+      inputs: {
+        links: [],
+      },
     });
     component = fixture.componentInstance;
   });

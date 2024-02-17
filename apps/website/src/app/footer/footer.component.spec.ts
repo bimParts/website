@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { FooterComponent } from './footer.component';
 
 describe(FooterComponent.name, () => {
@@ -7,6 +7,7 @@ describe(FooterComponent.name, () => {
   beforeEach(async () => {
     const { fixture } = await render(FooterComponent, {
       imports: [],
+      providers: [],
     });
     component = fixture.componentInstance;
   });

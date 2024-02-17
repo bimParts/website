@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { TeamComponent } from './team.component';
 import { ProfileComponent } from '@bp/components';
 
@@ -8,6 +8,8 @@ describe(TeamComponent.name, () => {
   beforeEach(async () => {
     const { fixture } = await render(TeamComponent, {
       imports: [ProfileComponent],
+      providers: [],
+      inputs: {},
     });
     component = fixture.componentInstance;
   });

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { ServicesComponent } from './services.component';
 import { CardComponent } from '@bp/components';
 import { MockComponent } from 'ng-mocks';
@@ -8,7 +8,8 @@ describe(ServicesComponent.name, () => {
 
   beforeEach(async () => {
     const { fixture } = await render(ServicesComponent, {
-      componentImports: [MockComponent(CardComponent)],
+      imports: [MockComponent(CardComponent)],
+      providers: [],
     });
     component = fixture.componentInstance;
   });

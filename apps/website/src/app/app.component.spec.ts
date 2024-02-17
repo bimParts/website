@@ -1,4 +1,4 @@
-import { render } from '@testing-library/angular';
+import { render } from '@bp/abstractions';
 import { MockComponent } from 'ng-mocks';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
@@ -13,7 +13,7 @@ describe(AppComponent.name, () => {
 
   beforeEach(async () => {
     const { fixture } = await render(AppComponent, {
-      componentImports: [
+      imports: [
         MockComponent(HeaderComponent),
         MockComponent(HeroComponent),
         MockComponent(ServicesComponent),
@@ -21,6 +21,7 @@ describe(AppComponent.name, () => {
         MockComponent(ContactComponent),
         MockComponent(FooterComponent),
       ],
+      providers: [],
     });
     component = fixture.componentInstance;
   });
