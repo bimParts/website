@@ -8,6 +8,7 @@ type RenderOptions<ComponentType> = {
   imports: Component['imports'];
   providers: Component['providers'];
   inputs?: Partial<ComponentType> | Record<keyof ComponentType, unknown>;
+  properties?: Partial<ComponentType>;
 };
 
 export const render = <ComponentType>(
@@ -20,6 +21,7 @@ export const render = <ComponentType>(
     providers: undefined,
     componentProviders: undefined,
     componentInputs: renderOptions?.inputs,
+    componentProperties: renderOptions?.properties,
     configureTestBed: (testbed) => {
       testbed.overrideComponent(component, {
         set: {

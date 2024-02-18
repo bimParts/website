@@ -1,5 +1,6 @@
 import { render } from '@bp/abstractions';
 import { CardComponent } from './card.component';
+import { input } from '@angular/core';
 
 describe(CardComponent.name, () => {
   let component: CardComponent;
@@ -8,9 +9,9 @@ describe(CardComponent.name, () => {
     const { fixture } = await render(CardComponent, {
       imports: [],
       providers: [],
-      inputs: {
-        text: '',
-        link: '',
+      properties: {
+        text: input(''),
+        link: input('' as string | undefined),
       },
     });
     component = fixture.componentInstance;

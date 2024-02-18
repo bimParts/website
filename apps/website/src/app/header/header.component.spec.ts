@@ -1,5 +1,7 @@
 import { render } from '@bp/abstractions';
 import { HeaderComponent } from './header.component';
+import { input } from '@angular/core';
+import { NavItem } from '@bp/types';
 
 describe(HeaderComponent.name, () => {
   let component: HeaderComponent;
@@ -8,8 +10,8 @@ describe(HeaderComponent.name, () => {
     const { fixture } = await render(HeaderComponent, {
       imports: [],
       providers: [],
-      inputs: {
-        links: [],
+      properties: {
+        links: input([] as NavItem[]),
       },
     });
     component = fixture.componentInstance;
