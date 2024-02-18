@@ -8,6 +8,7 @@ import { NavItem } from '@bp/types';
   template: `
     <a href="/">
       <img
+        class="h-20 object-cover"
         src="/assets/bimparts.svg"
         alt="Bimparts Logo" />
     </a>
@@ -24,7 +25,7 @@ import { NavItem } from '@bp/types';
   `,
   styles: `
     :host {
-      @apply flex flex-row gap-4;
+      @apply flex flex-row gap-4 h-32 items-center justify-between px-4 w-full;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

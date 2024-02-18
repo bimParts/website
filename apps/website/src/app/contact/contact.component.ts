@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'bpw-contact',
   standalone: true,
   imports: [],
-  template: ``,
+  template: ` <address></address> `,
   styles: `
     :host {
       @apply block;

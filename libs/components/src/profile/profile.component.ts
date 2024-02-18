@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     <a
       [href]="'mailto:' + email()"
       [title]="'Email-Adresse von ' + name()">
-      <figure class="flex flex-col items-center max-w-24">
+      <figure class="flex flex-col gap-2 items-center">
         <img
           class="aspect-square rounded-full w-full object-cover"
           [src]="imgSrc()"
@@ -24,7 +24,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   `,
   styles: `
     :host {
-      @apply block;
+      @apply block m-2;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

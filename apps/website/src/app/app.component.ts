@@ -10,30 +10,30 @@ import { TeamComponent } from './team/team.component';
   standalone: true,
   selector: 'bpw-root',
   template: `
-    <header class="container sticky">
-      <bpw-header [links]="navItems" />
+    <header class="sticky top-0 z-10 bg-white">
+      <div class="container">
+        <bpw-header [links]="navItems" />
+      </div>
     </header>
     <main>
-      <section class="container">
-        <h2 class="text-2xl">bimTree</h2>
-        <bpw-hero />
-      </section>
+      <bpw-hero />
+
       <section
         class="container"
         id="services">
-        <h2 class="text-2xl">Services</h2>
+        <h2 class="text-5xl font-extrabold">Services</h2>
         <bpw-services />
       </section>
       <section
         class="container"
         id="team">
-        <h2 class="text-2xl">Team</h2>
+        <h2 class="text-5xl font-extrabold">Team</h2>
         <bpw-team />
       </section>
       <section
         class="container"
         id="contact">
-        <h2 class="text-2xl">Kontakt</h2>
+        <h2 class="text-5xl font-extrabold">Kontakt</h2>
         <bpw-contact />
       </section>
     </main>
@@ -43,7 +43,10 @@ import { TeamComponent } from './team/team.component';
   `,
   styles: `
     :host {
-      @apply block;
+      @apply block relative;
+    }
+    main section {
+      @apply w-full py-16 flex flex-col items-center justify-center gap-12;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
