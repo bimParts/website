@@ -30,6 +30,10 @@ jobs:
       - name: install packages
         run: npm ci
 
+      - name: make main unambiguous
+        if: github.ref != 'refs/heads/main'
+        run: git rev-parse --verify main || git remote set-branches origin main && git fetch --depth 1 origin main && git branch main origin/main
+
       - name: execute task
         run: npx nx format:check
 
@@ -50,8 +54,12 @@ jobs:
       - name: install packages
         run: npm ci
 
+      - name: make main unambiguous
+        if: github.ref != 'refs/heads/main'
+        run: git rev-parse --verify main || git remote set-branches origin main && git fetch --depth 1 origin main && git branch main origin/main
+
       - name: execute task
-        run: npx nx affected -t lint
+        run: npx nx affected -t lint --base=main --head=HEAD
 
   test:
     name: Test
@@ -70,5 +78,9 @@ jobs:
       - name: install packages
         run: npm ci
 
+      - name: make main unambiguous
+        if: github.ref != 'refs/heads/main'
+        run: git rev-parse --verify main || git remote set-branches origin main && git fetch --depth 1 origin main && git branch main origin/main
+
       - name: execute task
-        run: npx nx affected -t test
+        run: npx nx affected -t test --base=main --head=HEAD

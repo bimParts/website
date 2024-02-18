@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bp/abstractions": ["libs/abstractions/src/index.ts"],
+      "@bp/components": ["libs/components/src/index.ts"],
+      "@bp/types": ["libs/types/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

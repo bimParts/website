@@ -1,27 +1,41 @@
-import { TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
+import { render } from '@bp/abstractions';
+import { MockComponent } from 'ng-mocks';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeroComponent } from './hero/hero.component';
+import { ServicesComponent } from './services/services.component';
+import { TeamComponent } from './team/team.component';
 
-describe('AppComponent', () => {
+@Component({
+  selector: 'bpw-header',
+  standalone: true,
+  template: '',
+})
+class MockHeaderComponent {
+  @Input() links?: string;
+}
+
+describe(AppComponent.name, () => {
+  let component: AppComponent;
+
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterTestingModule],
-    }).compileComponents();
+    const { fixture } = await render(AppComponent, {
+      imports: [
+        MockHeaderComponent,
+        MockComponent(HeroComponent),
+        MockComponent(ServicesComponent),
+        MockComponent(TeamComponent),
+        MockComponent(ContactComponent),
+        MockComponent(FooterComponent),
+      ],
+      providers: [],
+    });
+    component = fixture.componentInstance;
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome website'
-    );
-  });
-
-  it(`should have as title 'website'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('website');
+  it(`should create'`, () => {
+    expect(component).toBeTruthy();
   });
 });
