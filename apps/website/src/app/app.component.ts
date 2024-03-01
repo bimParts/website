@@ -11,12 +11,12 @@ import { TeamComponent } from './team/team.component';
   selector: 'bpw-root',
   template: `
     <header class="sticky top-0 z-10 bg-white">
-      <div class="container">
-        <bpw-header [links]="navItems" />
-      </div>
+      <bpw-header
+        class="container"
+        [links]="navItems" />
     </header>
 
-    <main class="flex flex-col gap-12 mt-12">
+    <main class="flex flex-col gap-12">
       <bpw-hero />
 
       <section
