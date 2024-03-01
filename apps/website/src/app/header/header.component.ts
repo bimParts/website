@@ -9,7 +9,7 @@ import { NavItem } from '@bp/types';
     <a href="/">
       <img
         class="h-20 object-cover"
-        src="/assets/bimparts.svg"
+        src="assets/bimparts.svg"
         alt="Bimparts Logo" />
     </a>
 
