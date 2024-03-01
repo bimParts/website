@@ -10,10 +10,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       [title]="'Email-Adresse von ' + name()">
       <figure class="flex flex-col gap-2 items-center">
         <img
-          class="aspect-square rounded-full w-full object-cover"
+          class="aspect-square rounded-full object-cover w-3/4 sm:w-4/6 md:w-1/2 lg:w-56 2xl:w-64 mx-auto"
           [src]="imgSrc()"
           [alt]="name()" />
-        <figcaption>
+        <figcaption class="text-center">
           <h3 class="font-black text-lg">{{ name() }}</h3>
           @if(title()){
           <p class="text-bold text-gray-400">{{ title() }}</p>
@@ -24,7 +24,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   `,
   styles: `
     :host {
-      @apply block m-2;
+      @apply block p-2;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

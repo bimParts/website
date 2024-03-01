@@ -15,7 +15,8 @@ import { TeamComponent } from './team/team.component';
         <bpw-header [links]="navItems" />
       </div>
     </header>
-    <main>
+
+    <main class="flex flex-col gap-12 mt-12">
       <bpw-hero />
 
       <section
@@ -46,7 +47,7 @@ import { TeamComponent } from './team/team.component';
       @apply block relative;
     }
     main section {
-      @apply w-full py-16 flex flex-col items-center justify-center gap-12;
+      @apply w-full flex flex-col items-center justify-center gap-12;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -5,12 +5,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <img
-      class="object-cover absolute inset-0 w-[50%]"
-      src="assets/hero/trees.png"
-      alt="BimTree" />
-    <article
-      class="absolute w-[50%] h-full left-[50%] container flex flex-col justify-center gap-4">
+    <div class="left">
+      <img
+        src="assets/hero/trees.png"
+        alt="BimTree" />
+    </div>
+    <article class="right">
       <h1 class="text-4xl font-black">BimTree</h1>
       <p class="font-bold">
         Entdecken Sie die bimTree Add-in-Software, die die Erstellung von
@@ -26,7 +26,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   styles: `
     :host {
-      @apply block relative m-0 h-96 overflow-hidden;
+      @apply block m-0 grid lg:grid-cols-2 gap-4 place-items-center;
+    }
+
+    .left {
+      @apply overflow-hidden w-full lg:h-128 2xl:h-144;
+
+      img {
+        @apply object-cover w-full h-full;
+      }
+    }
+    .right {
+      @apply h-full container flex flex-col justify-center gap-4 text-center lg:text-left;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

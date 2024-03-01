@@ -17,7 +17,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     <ng-template #content>
       <article
         class="flex flex-col items-center gap-2 rounded-sm hover:shadow-2xl shadow-slate-200">
-        <ng-content select=".image" />
+        <ng-content select="[image]" />
         <h3 class="text-2xl font-bold">{{ title() }}</h3>
         <div class="p-2 text-center">
           <ng-content />

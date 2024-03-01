@@ -13,6 +13,10 @@ module.exports = {
         center: true,
         padding: '3rem',
       },
+      spacing: {
+        128: '32rem',
+        144: '36rem',
+      },
     },
   },
   plugins: [],

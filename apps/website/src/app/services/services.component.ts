@@ -11,8 +11,8 @@ import { CardComponent } from '@bp/components';
         image
         src="assets/services/cad-software.jpeg"
         alt="Symbolbild für CAD Software"
-        class="image aspect-square object-cover" />
-      <p class="font-medium tracking-wider">
+        class="image" />
+      <p class="text">
         Entdecken Sie unsere massgeschneiderte Add-in Software für
         CAD-Anwendungen, die von der Konzeption bis zur Projektleitung alles
         umfasst. Wir unterstützen Kunden bei der Entwicklung von
@@ -25,8 +25,8 @@ import { CardComponent } from '@bp/components';
         image
         src="assets/services/analysen.jpeg"
         alt="Symbolbild für Analysen"
-        class="image aspect-square object-cover" />
-      <p class="font-medium tracking-wider">
+        class="image" />
+      <p class="text">
         Unsere Expertise in Wärmeanalysen ermöglicht eine detaillierte
         Untersuchung der Temperaturveränderungen in Landschaften über die Zeit.
         Durch die Analyse des Pflanzenwachstums und der Tageszeit bieten wir
@@ -40,8 +40,8 @@ import { CardComponent } from '@bp/components';
         image
         src="assets/services/skript-automation.jpeg"
         alt="Symbolbild für Skript Automation"
-        class="image aspect-square object-cover" />
-      <p class="font-medium tracking-wider">
+        class="image" />
+      <p class="text">
         Steigern Sie Ihre Effizienz mit unseren Automatisierungsskripts für
         CAD-Software. Ob für spezifische Projekte oder komplette Workflows,
         unsere Skriptlösungen sind darauf ausgerichtet, Ihre Arbeitsprozesse zu
@@ -53,6 +53,12 @@ import { CardComponent } from '@bp/components';
   styles: `
     :host {
       @apply grid lg:grid-cols-3 gap-8 place-items-center;
+    }
+    [image] {
+      @apply aspect-square object-cover sm:w-3/4 md:w-1/2 lg:w-full 2xl:w-3/4  mx-auto;
+    }
+    .text {
+      @apply font-medium tracking-wider;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -29,7 +29,7 @@ import { ProfileComponent } from '@bp/components';
   `,
   styles: `
     :host {
-      @apply grid lg:grid-cols-3 gap-8 place-items-center;
+      @apply w-full grid lg:grid-cols-3 gap-8 place-items-center lg:justify-between;
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
